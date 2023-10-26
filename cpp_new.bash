@@ -11,7 +11,6 @@ CREATION_DATE=$(date "+%Y-%m-%d")
 mkdir $PROJECT_NAME
 cp CMakeLists.txt $PROJECT_NAME
 cp LICENSE $PROJECT_NAME
-cp -r extern $PROJECT_NAME
 
 cd $PROJECT_NAME
 
@@ -81,8 +80,10 @@ EOF
 cd build
 cmake ..
 cmake --build .
+
 cd ..
 ./bin/a.out
+./bin/hello_test
 
 
 cd ..
