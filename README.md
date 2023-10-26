@@ -14,7 +14,6 @@ This creates a project with the structure:
     |_ a.out
     |_ hello_test
 |_ extern/
-    |_ gtest/
 |_ include/
 |_ test/
     |_ hello_test.cpp
