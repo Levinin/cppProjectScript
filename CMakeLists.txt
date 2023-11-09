@@ -18,6 +18,8 @@ add_executable(a.out
 option(ENABLE_PRODUCTION_BUILD "Enable production compiler flags" OFF)   
 if(ENABLE_PRODUCTION_BUILD)
   target_compile_options(a.out PRIVATE "$<$<CONFIG:Release>:-O3>")
+else()
+  target_compile_options(a.out PRIVATE -ggdb -Wall)	
 endif()
 
 target_include_directories(a.out PRIVATE include/)
