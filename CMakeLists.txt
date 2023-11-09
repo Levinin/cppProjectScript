@@ -19,7 +19,7 @@ option(ENABLE_PRODUCTION_BUILD "Enable production compiler flags" OFF)
 if(ENABLE_PRODUCTION_BUILD)
   target_compile_options(a.out PRIVATE "$<$<CONFIG:Release>:-O3>")
 else()
-  target_compile_options(a.out PRIVATE -ggdb -Wall)	
+  target_compile_options(a.out PRIVATE -gvms -Wall)	
 endif()
 
 target_include_directories(a.out PRIVATE include/)
@@ -46,6 +46,7 @@ add_executable(
         test/hello_test.cpp
 )
 target_link_libraries(hello_test PRIVATE GTest::gtest_main)
+target_compile_options(hello_test PRIVATE -gvms -Wall)	
 
 #######################################################################
 include(GoogleTest)
